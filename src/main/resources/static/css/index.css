@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size:30px;
+}
+
+body {
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.main-container {
+	min-height: calc(100vh - 136px);
+	display: grid;
+
+
+	row-gap: 50px;
+	column-gap: 50px;
+}
+
+
+
+
+
+
+.card p {
+	color: #fff;
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+.card input {
+	margin-bottom: 40px;
+	height: 35px;
+}
+
+.warning {
+	position: relative;
+	margin-top: -37px;
+}
+
+footer {
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+}

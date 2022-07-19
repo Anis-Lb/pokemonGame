@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/result.css}">
+    <title>Result 2 round</title>
+</head>
+<body>
+
+
+<!-- Main Container Start -->
+<div class="main-container container py-5 px-4">
+
+
+    <form name="form_name" id="form_name" action="/resultRound3" method="POST" th:object=${change}>
+        <div class="card bg-dark text-light py-5 px-4 mx-auto">
+
+            <h3 class="bg-danger text-center mb-5 p-2">Rapport 2 round</h3>
+
+
+            <p th:utext:if="${result}" th:utext="${result.result}"></p>
+
+            <div class="option">
+
+                <p>Player 1 which pokemon do you want to use it ?</p>
+                <input type="radio" th:name="changePokemonPlayer1" th:value="1" checked/>
+                <p class="title" th:text="${players.player1.pokemon1.name} "> </p>
+                <img th:src="@{${players.player1.pokemon1.sprites.frontDefault}}" />
+            </div>
+            <div class="option">
+                <input type="radio" th:name="changePokemonPlayer1" th:value="2" />
+                <p class="title" th:text="${players.player1.pokemon2.name} "> </p>
+                <img th:src="@{${players.player1.pokemon2.sprites.frontDefault}}" />
+            </div>
+
+            <p></p>
+            <div class="option">
+                <p>Player 2 which pokemon do you want to use it ?</p>
+                <input type="radio" th:name="changePokemonPlayer2" th:value="1" checked/>
+                <p class="title" th:text="${players.player2.pokemon1.name} "> </p>
+                <img th:src="@{${players.player2.pokemon1.sprites.frontDefault}}" />
+            </div>
+            <div class="option">
+                <input type="radio" th:name="changePokemonPlayer2" th:value="2" />
+                <p class="title" th:text="${players.player2.pokemon2.name} "> </p>
+                <img th:src="@{${players.player2.pokemon2.sprites.frontDefault}}" />
+            </div>
+
+
+
+
+            <button type="submit" class="btn btn-danger d-block mx-auto mt-4">Next</button>
+
+
+
+        </div>
+
+    </form>
+
+
+
+
+</div>
+
+<!-- Importing Footer -->
+<div th:insert="footer.html :: footer"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
