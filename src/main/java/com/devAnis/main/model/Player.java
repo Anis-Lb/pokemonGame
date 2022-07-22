@@ -51,4 +51,12 @@ public class Player {
     public boolean isWinner(){
         return this.points == 2;
     }
+
+    public Pokemon getPokemon(){
+        if (this.changePokemon == 1){
+            return this.pokemon1;
+        }
+        return this.pokemon2;
+
+    }
 }

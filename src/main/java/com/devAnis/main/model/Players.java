@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Players {
-    Player player1;
-    Player player2;
+    private Player player1;
+    private Player player2;
 
     public Player getPlayer1() {
         return player1;

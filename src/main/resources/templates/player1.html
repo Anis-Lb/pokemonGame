@@ -20,10 +20,10 @@
 	<h3 class="bg-danger text-light">Player 1</h3>
 	<h1 class="bg-danger text-light">Chose the first pokemon</h1>
 
-	<form name="form_name" id="form_name" action="/player2" method="POST" th:object=${temp1}>
-		<div class="ques-box bg-dark text-light" th:each="ques, i: ${temp1.listPokemon1}">
+	<form name="form_name" id="form_name" action="/player2" method="POST" th:object=${util}>
+		<div class="ques-box bg-dark text-light" th:each="ques, i: ${RandomList1}">
 			<div class="option">
-				<input type="radio" th:field="*{idPokemon1}" th:name="${temp1.idPokemon1}" th:value="${ques.id}" />
+				<input type="radio" th:field="*{idPokemon1}" th:name="${util.idPokemon1}" th:value="${ques.id}" />
 				<p class="title"  > &ensp;name :&ensp; </p>
 				<p class="title" th:text="${ques.name} "> </p>
 				<p class="title"  >&ensp;&ensp;height :&ensp;</p>
@@ -37,10 +37,9 @@
 		</div>
 		<h1></h1>
 		<h1 class="bg-danger text-light">Chose the second pokemon</h1>
-		<div class="ques-box bg-dark text-light" th:each="ques, i: ${temp1.listPokemon2}">
-
+		<div class="ques-box bg-dark text-light" th:each="ques, i: ${RandomList2}">
 			<div class="option">
-				<input type="radio" th:field="*{idPokemon2}" th:name="|temp1.idPokemon2|" th:value="${ques.id}" />
+				<input type="radio" th:field="*{idPokemon2}" th:name="${util.idPokemon2}" th:value="${ques.id}" />
 				<p class="title"  > &ensp;name :&ensp; </p>
 				<p class="title" th:text="${ques.name} "> </p>
 				<p class="title"  >&ensp;&ensp;height :&ensp;</p>
